@@ -1,0 +1,9 @@
+node_modules/
+lib/
+*.tgz
+npm-debug.log*
+# npm 缓存指进仓库时的产物（沙箱环境需要，但不入库）
+.npm-cache/
+# 临时探针脚本（开发期用，不入库）
+_*.mjs
+_*.cjs

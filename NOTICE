@@ -1,0 +1,9 @@
+@zhitiaojun/dsh-anysearch
+Copyright 2026 @zhitiaojun/dsh-anysearch contributors
+
+This product is adapted from anysearch-skill
+(https://github.com/anysearch-ai/anysearch-skill)
+Copyright 2026 AnySearch Team, licensed under the Apache License, Version 2.0.
+
+Portions of the API protocol handling, parameter normalization, and markdown
+formatting logic are derived from scripts/anysearch_cli.js of that project.

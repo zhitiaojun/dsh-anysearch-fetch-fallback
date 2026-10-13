@@ -1,0 +1,12 @@
+# dsh bundle patch: inserts this plugin into a profile's layer stack.
+#
+# 这条 insert 让本包在 profile 装配时以稳定 id（dsh-anysearch-fetch-fallback）
+# 挂载为 loader entry，市场/补丁层的启用禁用开关即以该 id 为目标。
+#
+# 注意：这里**故意不改 `- id: web` 那行**。本插件在运行时把
+# `ctx.web.fetchProviderId` 指向自己，因此无需触碰用户的 profile 配置——
+# 装完即用，卸载即还原（见 src/index.ts 顶部说明）。
+# 仅当运行时字段写入失败时，才需要按 README 的手动兜底方案在 profile 里补一行。
+- insert:
+    - id: dsh-anysearch-fetch-fallback
+      name: '@zhitiaojun/dsh-anysearch-fetch-fallback'

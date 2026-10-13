@@ -1,0 +1,44 @@
+{
+  "name": "@zhitiaojun/dsh-anysearch-fetch-fallback",
+  "version": "0.1.0",
+  "description": "给官方 @anysearch/anysearch-dsh 补一个 web_fetch 回退：AnySearch 优先，遇 HTTP 422 自动回退到宿主原生 http 抓取（零配置、无需改 profile）",
+  "keywords": [
+    "anysearch",
+    "deepseek-harness",
+    "dsh-plugin",
+    "web-fetch",
+    "fallback"
+  ],
+  "private": true,
+  "type": "module",
+  "main": "./lib/index.js",
+  "files": [
+    "lib",
+    "src",
+    "scripts",
+    "cordis.patch.yml",
+    "tsconfig.json"
+  ],
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "typescript": "^5.9.0"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --test \"test/*.test.mjs\"",
+    "prepare": "node scripts/build.mjs"
+  },
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
